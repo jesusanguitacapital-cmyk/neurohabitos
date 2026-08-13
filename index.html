@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>NeuroHabitos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="phone-frame">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">NeuroHabitos</p>
+          <h1 id="screenTitle">Hoy</h1>
+        </div>
+        <button id="quickAddButton" class="icon-button" type="button" aria-label="Crear habito">
+          +
+        </button>
+      </header>
+
+      <main class="app-main">
+        <section id="view-today" class="view"></section>
+        <section id="view-habits" class="view hidden"></section>
+        <section id="view-form" class="view hidden"></section>
+        <section id="view-detail" class="view hidden"></section>
+        <section id="view-neuro" class="view hidden"></section>
+        <section id="view-analysis" class="view hidden"></section>
+        <section id="view-settings" class="view hidden"></section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active" data-view="today" type="button">Hoy</button>
+        <button class="nav-item" data-view="habits" type="button">Habitos</button>
+        <button class="nav-item" data-view="neuro" type="button">Neurociencia</button>
+        <button class="nav-item" data-view="analysis" type="button">Analisis IA</button>
+        <button class="nav-item" data-view="settings" type="button">Ajustes</button>
+      </nav>
+    </div>
+
+    <template id="habitCardTemplate">
+      <article class="habit-card">
+        <div class="habit-card__header">
+          <div class="habit-card__badge"></div>
+          <div class="habit-card__meta">
+            <h3 class="habit-card__name"></h3>
+            <p class="habit-card__time"></p>
+          </div>
+          <button class="ghost-button habit-card__detail-button" type="button">Ver</button>
+        </div>
+        <p class="habit-card__summary"></p>
+        <div class="habit-card__stats"></div>
+        <div class="habit-card__actions">
+          <button class="success-button habit-card__complete" type="button">Cumplido</button>
+          <button class="warning-button habit-card__skip" type="button">No cumplido</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="insightTemplate">
+      <article class="insight-card">
+        <p class="insight-card__label"></p>
+        <h3 class="insight-card__title"></h3>
+        <p class="insight-card__body"></p>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
